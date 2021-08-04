@@ -15,12 +15,12 @@ export default ({
 	label = '',
 	list,
 	multiple,
+	onBlur,
 	onChange,
 	placeholder = '',
 	required = false,
 	value = '',
-	withLabel = false,
-	onBlur
+	withLabel = false
 }) => {
 	let options = [...list];
 	if (options.includes('N/A')) options.splice(options.indexOf('N/A'), 1);
@@ -29,12 +29,12 @@ export default ({
 		return (
 			<Select
 				allowClear={allowClear}
-				disabled={disabled} 
+				disabled={disabled}
 				filterOption={(input, { props }) => props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
 				mode={multiple ? 'multiple' : 'default'}
+				onBlur={onBlur}
 				onChange={e => onChange({ target: { name: id, value: e } }, id, e)}
 				onClear={e => onChange({ target: { name: id, value: '' } }, id, '')}
-				onBlur={onBlur}
 				optionFilterProp="children"
 				placeholder={placeholder || label || id}
 				showSearch
@@ -45,7 +45,6 @@ export default ({
 						{e}
 					</Select.Option>
 				))}
-				
 			</Select>
 		);
 	};
