@@ -7,7 +7,7 @@ if (browser) require('./styles.css');
 
 export default ({
 	allowClear = false,
-	defaultValue = null,
+	defaultValue = '',
 	disabled = false,
 	error,
 	extra = null,
