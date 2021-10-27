@@ -1,6 +1,6 @@
 {
 	"name": "@volenday/input-select",
-	"version": "2.2.3",
+	"version": "2.2.4",
 	"main": "dist/index.min.js",
 	"author": "Volenday <developers@volenday.com>",
 	"license": "MIT",
@@ -11,7 +11,7 @@
 		"prepublishOnly": "webpack --progress -p"
 	},
 	"peerDependencies": {
-		"antd": "^4.8.4",
+		"antd": "^4.16.13",
 		"react": "^17.0.1"
 	},
 	"devDependencies": {

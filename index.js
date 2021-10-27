@@ -7,6 +7,7 @@ if (browser) require('./styles.css');
 
 export default ({
 	allowClear = false,
+	defaultValue = null,
 	disabled = false,
 	error,
 	extra = null,
@@ -19,7 +20,7 @@ export default ({
 	onChange,
 	placeholder = '',
 	required = false,
-	value = '',
+	value = null,
 	withLabel = false
 }) => {
 	let options = [...list];
@@ -39,7 +40,7 @@ export default ({
 				placeholder={placeholder || label || id}
 				showSearch
 				style={{ width: '100%' }}
-				value={value ? value : ''}>
+				value={value ? value : defaultValue}>
 				{options.map(e => (
 					<Select.Option key={e} value={e === 'All' ? 'all' : e}>
 						{e}
