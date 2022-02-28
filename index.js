@@ -20,6 +20,7 @@ export default ({
 	onChange,
 	placeholder = '',
 	required = false,
+	showSearch = true,
 	value = null,
 	withLabel = false
 }) => {
@@ -38,7 +39,7 @@ export default ({
 				onClear={e => onChange({ target: { name: id, value: '' } }, id, '')}
 				optionFilterProp="children"
 				placeholder={placeholder || label || id}
-				showSearch
+				showSearch={showSearch}
 				style={{ width: '100%' }}
 				value={value ? value : defaultValue}>
 				{options.map(e => (
