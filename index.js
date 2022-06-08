@@ -30,6 +30,7 @@ export default ({
 	const renderSelect = () => {
 		return (
 			<Select
+				getPopupContainer={trigger => trigger?.parentNode || document.body}
 				allowClear={allowClear}
 				disabled={disabled}
 				filterOption={(input, { props }) => props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
